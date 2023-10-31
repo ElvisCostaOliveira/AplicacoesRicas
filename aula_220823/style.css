@@ -1,0 +1,8 @@
+#fconf {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border : 1px solid black;
+    background-color: dimgray ;
+    display: none;
+}

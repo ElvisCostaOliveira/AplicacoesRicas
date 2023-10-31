@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <head>
+        <script>
+            //criar uma função
+            function desenhar() {
+                var figura = document.querySelector("#minhaTela");
+                //criando uma figura
+                var circulo1 = figura.getContext("2d");
+
+                circulo1.fillStyle = "yellow";
+                circulo1.beginPath();
+                circulo1.arc(200, 200, 50, 0, 2 * Math.PI/4,true);
+
+                circulo1.fill();
+            }
+
+            //função será chamada após o carregamento completo da página
+            window.onload = desenhar;
+        </script>
+
+    </head>
+
+    <body>
+        <canvas id="minhaTela" height="500" width="600">
+    </body>
+</body>
+
+</html>

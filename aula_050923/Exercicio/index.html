@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script type="text/javascript" src="script.js"></script>
+    <title>AudioVideo</title>
+</head>
+
+<body>
+    <video id="video" src="video/video.mp4" width="500px" height="350px" muted poster="img/img.png"></video>
+    <p></p>
+    <button id="play-video">Reproduzir <br> Video</button>
+    <button id="pause-video">Pausa <br> Video</button>
+    <button id="mute-video">Mutar <br> Video</button>
+    <button id="volta-video">Retroceder <br> Video</button>
+    <button id="adiar-video">Adiar <br> Video</button>
+    <button id="tela-cheia">Tela <br> Cheia</button>
+
+    <p></p>
+    <audio id="audio" controls src="audio/" muted ></audio>
+
+    <p></p>
+    <button id="play-audio">Reproduzir <br> Audio</button>
+    <button id="pause-audio">Pausa <br> Audio</button>
+    <button id="mute-audio">Mute <br> Audio</button>
+    <button id="volta-audio">Retroceder <br> Audio</button>
+    <button id="adiar-audio">Adiar <br> Audio</button>
+   
+
+    <script>
+        const video = document.getElementById('video');
+        const playVideoBtn = document.getElementById('play-video');
+        playVideoBtn.addEventListener('click', function () {
+            video.play();
+        });
+
+        const pauseVideoBtn = document.getElementById('pause-video');
+        pauseVideoBtn.addEventListener('click', function () {
+            video.pause()
+
+        });
+
+        const muteVideoBtn = document.getElementById('mute-video');
+        muteVideoBtn.addEventListener('click', function () {
+            video.muted = !video.muted;
+        });
+
+        const voltaVideoBtn = document.getElementById('volta-video');
+        voltaVideoBtn.addEventListener('click', function () {
+            video.currentTime -= 10;
+        });
+
+        const adiarVideoBtn = document.getElementById('adiar-video');
+        adiarVideoBtn.addEventListener('click', function () {
+            video.currentTime += 10;
+        });
+
+        const fullscreenVideoBtn = document.getElementById('tela-cheia');
+        fullscreenVideoBtn.addEventListener('click', function () {
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.mozRequestFullScreen) {
+                video.mozRequestFullScreen();
+            } else if (video.webkitRequestFullscreen) {
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) {
+                video.msRequestFullscreen();
+            }
+        });
+
+
+
+        const audio = document.getElementById('audio');
+        const playAudioBtn = document.getElementById('play-audio');
+        playAudioBtn.addEventListener('click', function () {
+            audio.play();
+        });
+
+        const pauseAudioBtn = document.getElementById('pause-audio');
+        pauseAudioBtn.addEventListener('click', function () {
+            audio.pause()
+        });
+
+        const muteAudioBtn = document.getElementById('mute-audio');
+        muteaudioBtn.addEventListener('click', function () {
+            audio.muted = !audio.muted;
+        });
+
+        const voltarAudioBtn = document.getElementById('volta-audio');
+        voltarAudioBtn.addEventListener('click', function () {
+            audio.currentTime -= 10;
+        });
+
+        const adiarAudioBtn = document.getElementById('adiar-audio');
+        adiarAudioBtn.addEventListener('click', function () {
+            audio.currentTime += 10;
+        });
+
+    </script>
+
+</body>
+
+</html>

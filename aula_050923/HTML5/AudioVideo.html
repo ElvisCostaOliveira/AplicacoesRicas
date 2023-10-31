@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AudioVideo</title>
+</head>
+
+<body>
+    <video id="video" src="video2.mp4" controls width="500px" height="350px" muted poster="img.png"></video>
+    <button id="play-video">Reproduzir <br> Vídeo </Video></button>
+    <button id="pause-video">Reproduzir <br> Vídeo </Video></button>
+    
+    <script>
+        const video = document.getElementById('video');
+        const playVideoBtn = document.getElementById('play-video');
+        playVideoBtn.addEventListener('click',function(){
+            video.muted = !video.muted;
+        })
+    </script>
+
+
+
+
+    <source src="video2.mp4">
+    <source src="video1.mp4">
+    <iframe width="500px" height="350px" src="https://www.youtube.com/embed/Eu_Db-sBdZ4?si=oVOhBfqtgdYhrmmZ"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+</body>
+
+</html>

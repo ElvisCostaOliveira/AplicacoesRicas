@@ -1,0 +1,14 @@
+body {
+    text-align: center;
+}
+button {
+    color: white;
+    background-color: limegreen;
+    border: 0;
+    border-radius: 2px;
+}
+video {
+    display: flex;
+    width: 750px;
+    margin:0 auto;
+}
