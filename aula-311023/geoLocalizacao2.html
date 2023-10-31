@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation via Googleapis</title>
+    <script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDkq9yYSu5y3DsHBXQKXzmHTGeg6pHmC0&callback=initMap&v=weekly defer">defer</script>
+    </script>
+</head>
+
+<body>
+    <label>
+        Latitude:<span id="lat"></span>
+    </label>
+    <br />
+    <label>
+        Longitude<span id="lon"></span>
+    </label>
+    <p>Caso tenha a chave da API do google, aparecerá o mapa abaixo com marcador de posição</p>
+    <div id="map" style="width: 600px; height: 600px;">
+
+    </div>
+    <script>
+        var lat, lon;
+
+        //declarando uma função chamada getLocation, que será responsável por obter a localização do usuário
+        function getLocation() {
+            //verificando se o navegador suporta a API Geolocation
+            if (!navigator.geolocation) {
+                return null;
+            }
+            //se ele passar pelo erro, pegamos a localização
+            navigator.geolocation.getCurrentPosition(function (pos) {
+                lat = document.getElementById("lat").innerText = pos.coords.latitude;
+                lon = document.getElementById("lon").innerText = pos.coords.longitude;
+                initMap();
+            })
+        }
+        //funcao para inicializar o google maps
+        function initMap() {
+            const nossaLocalizacao = { lat: lat, lng: lon };
+            //objeto criado a partir da classe google.maps
+            map = new google.maps.Map(document.getElementById("map"), {
+                //abaixo configuramos o mapa
+                zoom: 15,
+                center: nossaLocalizacao
+            })
+
+            //criando um marcador posicionado na localização
+            const marker = new google.maps.Marker({
+                position: nossaLocalizacao,
+                map: map //o nome depois dos dois pontos
+            });
+        }
+        getLocation();
+
+    </script>
+</body>
+
+</html>
