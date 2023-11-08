@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draganddrop1</title>
+    <style>
+        #div1 {
+            width: 335px;
+            height: 70px;
+            padding: 10px;
+            border: 1px solid gray;
+        }
+
+        #div2 {
+            width: 335px;
+            height: 70px;
+            padding: 10px;
+            border: 1px solid gray;
+        }
+
+        #div3 {
+            width: 335px;
+            height: 70px;
+            padding: 10px;
+            border: 1px solid gray;
+        }
+
+        #div4 {
+            width: 335px;
+            height: 70px;
+            padding: 10px;
+            border: 1px solid gray;
+        }
+
+        #div5 {
+            width: 335px;
+            height: 70px;
+            padding: 10px;
+            border: 1px solid gray;
+        }
+
+        #div6 {
+            width: 335px;
+            height: 70px;
+            padding: 10px;
+            border: 1px solid gray;
+        }
+
+        #div7 {
+            width: 335px;
+            height: 70px;
+            padding: 10px;
+            border: 1px solid gray;
+        }
+
+        #div8 {
+            width: 335px;
+            height: 70px;
+            padding: 10px;
+            border: 1px solid gray;
+        }
+
+        .pai {
+            display: flex;
+        }
+
+        .coluna{
+            background-color: aqua;
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+
+    <script>
+        //a função pode ter qualquer nome
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            let data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id)
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <p>Arraste a imagem para dentro do retângulo que você quiser:</p>
+    <div class="pai">
+
+        <div class="coluna">
+            <div id="div1" ondragover="allowDrop(event)" ondrop="drop(event)">
+                <img id="drag1" src="paisagem.jpg" draggable="true" ondragstart="drag(event)" width="330" height="70">
+            </div><br>
+            <div id="div2" ondragover="allowDrop(event)" ondrop="drop(event)"></div><br>
+            <div id="div3" ondragover="allowDrop(event)" ondrop="drop(event)"></div><br>
+            <div id="div4" ondragover="allowDrop(event)" ondrop="drop(event)"></div><br>
+        </div>
+
+        <div>
+            <div class="coluna">
+                <div id="div5" ondragover="allowDrop(event)" ondrop="drop(event)"></div><br>
+                <div id="div6" ondragover="allowDrop(event)" ondrop="drop(event)"></div><br>
+                <div id="div7" ondragover="allowDrop(event)" ondrop="drop(event)"></div><br>
+                <div id="div8" ondragover="allowDrop(event)" ondrop="drop(event)"></div><br>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
