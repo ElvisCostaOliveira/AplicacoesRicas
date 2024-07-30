@@ -1,1 +1,1 @@
-Aplicações_Ricas e
+Aplicações_Ricas
